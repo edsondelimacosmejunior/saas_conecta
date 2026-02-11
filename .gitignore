@@ -11,3 +11,8 @@ backend/**/__pycache__/
 *.pyc
 .env_conecta/
 .curriculos/
+
+# Kubernetes secrets (NUNCA commitar!)
+backend/k8s/*/secrets.yaml
+backend/k8s/dev/secrets.yaml
+backend/k8s/prod/secrets.yaml

@@ -34,7 +34,7 @@ class ConfiguracaoEmail(models.Model):
     email_host_password = models.CharField(
         verbose_name="EMAIL_HOST_PASSWORD",
         max_length=100,
-        default=""  # Configure via Django Admin,  # noqa: E501
+        default="",  # Configure via Django Admin
     )
 
     default_from_email = models.CharField(
