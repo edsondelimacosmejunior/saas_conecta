@@ -1,0 +1,108 @@
+@use "sass:map"
+@use "../variables"
+
+body
+  min-width: 100px
+  min-height: 100%
+  font-family: variables.$typography-font-family
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-smoothing: antialiased
+  line-height: variables.$body-line-height
+  font-size: variables.$body-font-size
+
+@mixin text($param)
+  @each $heading, $value in variables.$headings
+    @if ($param  == $heading)
+      font-size: map.get($value, "font-size")
+      font-weight: map.get($value, "font-weight")
+      line-height: map.get($value, "line-height")
+      letter-spacing: map.get($value, "letter-spacing")
+      font-family: map.get($value, "font-family"), sans-serif
+      text-transform: map.get($value, "text-transform")
+
+// :root
+//   @each $heading, $value in $headings
+//     #{--$heading}
+//       font-size: map-get($value, "size")
+//       font-weight: map-get($value, "weight")
+//       line-height: map-get($value, "line-height")
+//       letter-spacing: map-get($value, "letter-spacing")
+//       font-family: map-get($value, "family"), sans-serif
+//       @if map-get($value, "transform")
+//         text-transform: map-get($value, "transform")
+
+// .text-
+//   @each $heading, $value in variables.$headings
+//     &#{$heading}
+//       font-size: map.get($value, "font-size")
+//       font-weight: map.get($value, "font-weight")
+//       line-height: map.get($value, "line-height")
+//       letter-spacing: map.get($value, "letter-spacing")
+//       font-family: map.get($value, "font-family"), sans-serif
+//       @if map.get($value, "text-transform")
+//         text-transform: map.get($value, "text-transform")
+
+  &uppercase
+    text-transform: uppercase
+  &lowercase
+    text-transform: lowercase
+  &capitalize
+    text-transform: capitalize
+
+  &center
+    text-align: center
+  &left
+    text-align: left
+  &right
+    text-align: right
+  &justify
+    text-align: justify
+    hyphens: auto
+
+  &italic
+    font-style: italic
+  &bold
+    font-weight: bold
+
+  &no-wrap
+    white-space: nowrap
+
+  &strike
+    text-decoration: line-through
+
+  @each $weight, $value in variables.$text-weights
+    &weight-#{$weight}
+      font-weight: $value
+
+small
+  font-size: 80%
+big
+  font-size: 170%
+sub
+  bottom: -.25em
+sup
+  top: -.5em
+
+.one-line
+  overflow: hidden
+  display: -webkit-box !important
+  -webkit-line-clamp: 1
+  -webkit-box-orient: vertical
+  white-space: break-spaces
+
+.two-lines
+  overflow: hidden
+  display: -webkit-box !important
+  -webkit-line-clamp: 2
+  -webkit-box-orient: vertical
+  white-space: break-spaces
+
+.three-lines
+  overflow: hidden
+  display: -webkit-box !important
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  white-space: break-spaces

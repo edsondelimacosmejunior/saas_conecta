@@ -1,0 +1,30 @@
+@use "sass:list"
+@use "../variables"
+
+.shadow-transition
+  transition: variables.$shadow-transition !important
+
+@for $z from 1 through 24
+  .shadow-#{$z}
+    box-shadow: list.nth(variables.$shadows, $z)
+  .shadow-up-#{$z}
+    box-shadow: list.nth(variables.$shadows-up, $z)
+
+.no-shadow, .shadow-0
+  box-shadow: none !important
+.inset-shadow
+  box-shadow: variables.$inset-shadow !important
+.inset-shadow-down
+  box-shadow: variables.$inset-shadow-down !important
+
+.z-marginals
+  z-index: variables.$z-marginals
+
+.z-notify
+  z-index: variables.$z-notify
+
+.z-fullscreen
+  z-index: variables.$z-fullscreen
+
+.z-inherit
+  z-index: inherit !important

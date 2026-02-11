@@ -1,0 +1,38 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: conecta-hpa
+  namespace: conecta-prod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: conecta-deployment
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70  # Utilização média da CPU em 70%
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 250  # Utilização média da memória em 250%
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 20  # Espera 20 segundos antes de escalar para cima
+      policies:
+      - type: Percent
+        value: 50  # Aumenta no máximo 50% de réplicas por vez
+        periodSeconds: 60  # Durante um período de 60 segundos
+    scaleDown:
+      stabilizationWindowSeconds: 30  # Espera 30 segundos antes de escalar para baixo
+      policies:
+      - type: Pods
+        value: 1  # Reduz no máximo 1 Pod por vez
+        periodSeconds: 60  # Durante um período de 60 segundos

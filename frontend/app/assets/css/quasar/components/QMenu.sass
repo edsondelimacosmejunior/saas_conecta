@@ -1,0 +1,20 @@
+@use "../variables"
+
+.q-menu
+  position: fixed !important
+  display: inline-block
+  max-width: variables.$menu-max-width
+  box-shadow: variables.$menu-box-shadow
+  background: variables.$menu-background
+  border-radius: variables.$generic-border-radius
+  overflow-y: auto
+  overflow-x: hidden
+  outline: 0
+  max-height: 65vh
+  z-index: variables.$z-menu
+
+  &.q-dark
+    border: 1px solid rgba(var(--white),0.1)
+
+  &--square
+    border-radius: 0

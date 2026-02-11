@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conecta-deployment
+  namespace: conecta-prod
+  labels:
+    app: conecta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conecta
+  template:
+    metadata:
+      labels:
+        app: conecta
+    spec:
+      containers:
+        - name: conecta
+          image: timenovadata/conecta:b3e0d94-20250103-1527
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "256Mi"      # A quantidade mínima de memória que o pod pode usar
+              cpu: "100m"          # A quantidade mínima de CPU que o pod pode usar
+            limits:
+              memory: "756Mi"     # O limite máximo de memória que o pod pode usar
+              cpu: "500m"         # O limite máximo de CPU que o pod pode usar
+          envFrom:
+            - configMapRef:
+                name: conecta-configmap
+            - secretRef:
+                name: conecta-secrets
+      imagePullSecrets:
+      - name: dockerhub-secret
+      initContainers:
+        - name: init-migrate
+          image: timenovadata/conecta:b3e0d94-20250103-1527  # Imagem repetida para o migrate
+          command: ["/env/bin/python", "manage.py", "migrate"]
+          envFrom:
+            - configMapRef:
+                name: conecta-configmap
+            - secretRef:
+                name: conecta-secrets
+
+        - name: init-collectstatic
+          image: timenovadata/conecta:b3e0d94-20250103-1527  # Imagem repetida para o collectstatic
+          command: ["/env/bin/python", "manage.py", "collectstatic", "--noinput"]
+          envFrom:
+            - configMapRef:
+                name: conecta-configmap
+            - secretRef:
+                name: conecta-secrets

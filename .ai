@@ -1,0 +1,84 @@
+SaaS Conecta - Plataforma de Recrutamento
+
+🎯 OBJETIVO
+Manter padrões de desenvolvimento consistentes no monorepo Django + Nuxt 3.
+
+📋 ANTES DE COMEÇAR
+1. Leia ARCHITECTURE.md - Entenda a arquitetura
+2. Leia .cursorrules - Regras obrigatórias  
+3. Consulte DESIGN_SYSTEM.md - Componentes disponíveis
+4. Veja CONTRIBUTING.md - Como contribuir
+
+🚀 RODAR PROJETO
+Local: ./scripts/dev-local.sh
+Replit: Clique em "Run"
+
+📁 ESTRUTURA
+Backend:  Django REST API (porta 8000)
+Frontend: Nuxt 3 (porta 3000)
+Proxy:    /api/* → Backend com token automático
+
+🎨 FRONTEND - REGRAS CRÍTICAS
+✅ SEMPRE use componentes do Design System (components/Ui/)
+✅ NUNCA crie UI do zero
+✅ Componentes novos devem ser reutilizáveis
+✅ Use Tailwind para estilos
+✅ Props-driven (sem hardcode)
+
+Componentes principais:
+- UiButton
+- UiInput  
+- UiEmpty
+- Quasar components (q-item, q-badge, q-scroll-area)
+
+🔧 BACKEND - REGRAS CRÍTICAS
+✅ SEMPRE siga estrutura de pastas dos apps existentes
+✅ admin/, models/, serializers/, viewsets/ em SUBPASTAS
+✅ verbose_name em TODOS os campos
+✅ Admin com list_display, search_fields, list_filter
+✅ ViewSet com permission_classes SEMPRE definido
+
+Estrutura obrigatória:
+app_name/
+├── admin/
+├── models/
+├── serializers/
+├── viewsets/
+├── forms/ (opcional)
+├── managers/ (opcional)
+├── signals/ (opcional)
+└── tests/
+
+📖 CONSULTA RÁPIDA
+- Componentes: DESIGN_SYSTEM.md
+- Comandos: QUICK_REFERENCE.md
+- Padrões: ARCHITECTURE.md
+- Exemplos: Veja apps existentes (home/, recrutamento/)
+
+🚨 NÃO FAZER
+❌ Criar botões/inputs sem Design System
+❌ Models fora da pasta models/
+❌ Admin sem configuração completa
+❌ ViewSets sem permission_classes
+❌ Hardcode de valores que deveriam ser props
+❌ Ignorar estrutura de pastas padrão
+
+💡 WORKFLOW
+Frontend: Componentes → Composables → Services → Pages
+Backend:  Model → Admin → Serializer → ViewSet → URLs → Migrations
+
+🔐 AUTENTICAÇÃO
+Frontend: Token automático via middleware (server/middleware/api-proxy.js)
+Backend:  permission_classes = [AllowAny] para público
+          permission_classes = [IsAuthenticated] para privado
+
+📚 DOCS COMPLETAS
+README.md           - Overview
+ARCHITECTURE.md     - Arquitetura detalhada
+CONTRIBUTING.md     - Guia de contribuição
+DESIGN_SYSTEM.md    - Componentes e UI
+QUICK_REFERENCE.md  - Referência rápida
+.cursorrules        - Regras para AI assistants
+
+Este projeto prioriza CONSISTÊNCIA e REUTILIZAÇÃO.
+Sempre verifique se algo já existe antes de criar novo.

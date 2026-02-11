@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Cria o namespace
+kubectl create namespace conecta-prod
+
+# Aplica os manifestos
+kubectl apply -f configmap.yaml -n conecta-prod
+kubectl apply -f secrets.yaml -n conecta-prod
+kubectl apply -f deployment.yaml -n conecta-prod
+kubectl apply -f service.yaml -n conecta-prod
+kubectl apply -f ingress.yaml -n conecta-prod
+kubectl apply -f clusterissuer.yaml -n conecta-prod
+kubectl apply -f hpa.yaml -n conecta-prod
+
+# Comandos uteis
+kubectl rollout restart deployment conecta-deployment -n conecta-prod
+kubectl get all -n conecta-prod
+kubectl get pods -n conecta-prod
+kubectl describe pods  -n conecta-prod
+
+echo "Todos os recursos foram aplicados com sucesso!"

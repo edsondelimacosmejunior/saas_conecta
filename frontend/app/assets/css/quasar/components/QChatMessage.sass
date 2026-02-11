@@ -1,0 +1,95 @@
+@use "../variables"
+
+.q-message-name, .q-message-stamp, .q-message-label
+  font-size: small
+
+.q-message-label
+  margin: (3 * variables.$chat-message-distance) 0
+  text-align: center
+
+.q-message-stamp
+  color: inherit
+  margin-top: 4px
+  opacity: .6
+  display: none
+
+.q-message-avatar
+  border-radius: 50%
+  width: variables.$chat-message-avatar-size
+  height: variables.$chat-message-avatar-size
+  min-width: variables.$chat-message-avatar-size
+
+.q-message
+  // margin-bottom: $chat-message-distance
+  &:first-child .q-message-label
+    margin-top: 0
+
+.q-message-avatar--received
+  margin-right: .75rem
+.q-message-text--received
+  color: variables.$chat-message-received-bg
+  border-radius: variables.$chat-message-border-radius
+  // margin-right: 2.75rem
+  &:last-child:before
+    display: none
+
+.q-message-text-content--received
+  color: variables.$chat-message-received-color
+
+.q-message-name--sent
+  text-align: right
+.q-message-avatar--sent
+  margin-left: .75rem
+.q-message-container--sent
+  flex-direction: row-reverse
+.q-message-text--sent
+  color: variables.$chat-message-sent-bg
+  border-radius: variables.$chat-message-border-radius
+  // margin-left: 2.75rem
+  &:last-child:before
+    display: none
+
+.q-message-text-content--sent
+  color: variables.$chat-message-sent-color
+
+.q-message-text
+  background: currentColor
+  padding: variables.$chat-message-text-padding
+  line-height: max(1.2, variables.$min-line-height)
+  word-break: break-word
+  font-size: .875rem
+  position: relative
+
+  & + &
+    margin-top: 3px
+
+  &:last-child
+    display: flex
+    align-items: center
+    min-height: variables.$chat-message-avatar-size
+
+    .q-message-stamp
+      display: block
+    &:before
+      content: ''
+      position: absolute
+      bottom: 0
+      width: 0
+      height: 0
+
+.q-message-container
+  align-items: flex-start !important
+
+  > div
+    display: flex
+    flex-direction: column-reverse
+
+// .q-message-received .q-message-container > div
+//   width: 100%
+
+.body--dark
+  .q-message-text
+    background: rgba(var(--white),0.1)
+
+  .q-message-text-content
+    color: rgb(var(--white))

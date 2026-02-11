@@ -1,0 +1,227 @@
+# Regras de Desenvolvimento - SaaS Conecta
+
+## Arquitetura do Projeto
+
+Este é um projeto Django (Backend) + Nuxt 3 (Frontend) com padrões específicos que DEVEM ser seguidos.
+
+---
+
+## 🎨 FRONTEND (Nuxt 3)
+
+### Design System - OBRIGATÓRIO
+
+1. **SEMPRE reutilize componentes existentes** em `frontend/app/components/`
+2. **NUNCA crie elementos UI do zero** - use o Design System
+3. **Componentes disponíveis**:
+   - `UiButton` - Botões (tipos: primary, secondary, tertiary)
+   - `UiInput` - Inputs de formulário
+   - `UiEmpty` - Estados vazios
+   - Quasar components - q-item, q-badge, q-scroll-area, etc.
+
+4. **Criar novo componente?**
+   - Crie em `frontend/app/components/` com nomenclatura PascalCase
+   - Torne-o REUTILIZÁVEL (use props, não hardcode valores)
+   - Adicione ao Storybook (se houver)
+   - Documente props e uso
+
+5. **Estrutura de componentes**:
+   ```
+   components/
+   ├── Ui/         # Componentes base do Design System
+   ├── Vaga/       # Componentes específicos de Vaga
+   └── [Feature]/  # Componentes agrupados por feature
+   ```
+
+### Padrões de Código Frontend
+
+- **Composables**: Use composables existentes em `frontend/app/composables/`
+- **Services**: Crie services em `frontend/app/services/` para chamadas API
+- **Utils**: Funções utilitárias em `frontend/app/utils/`
+- **Stores**: Pinia stores em `frontend/app/stores/`
+- **Páginas**: `frontend/app/pages/` seguindo convenção de roteamento Nuxt
+
+### Estilo e Classes
+
+- **TailwindCSS**: Use classes utilitárias
+- **Quasar**: Use sistema de cores e componentes do Quasar
+- **Responsividade**: Use modifiers `max-lg:`, `max-sm:`, etc.
+
+---
+
+## 🔧 BACKEND (Django)
+
+### Estrutura de Apps Django
+
+Cada app Django segue a MESMA estrutura de pastas:
+
+```
+app_name/
+├── __init__.py
+├── apps.py
+├── urls.py
+├── admin/          # SEMPRE em subpasta
+│   ├── __init__.py
+│   └── [model]_admin.py
+├── models/         # SEMPRE em subpasta
+│   ├── __init__.py
+│   └── [model].py
+├── serializers/    # SEMPRE em subpasta
+│   ├── __init__.py
+│   └── [model]_serializers.py
+├── viewsets/       # SEMPRE em subpasta
+│   ├── __init__.py
+│   └── [model]_viewsets.py
+├── forms/          # Opcional
+├── managers/       # Opcional
+├── signals/        # Opcional
+├── migrations/
+├── static/
+├── templates/
+└── tests/
+```
+
+### Padrões de Models
+
+1. **Sempre herde de `models.Model`** (não use Meta abstracts desnecessários)
+2. **Use verbose_name** em todos os campos
+3. **Campos comuns**:
+   ```python
+   data_criacao = models.DateTimeField(auto_now_add=True)
+   data_atualizacao = models.DateTimeField(auto_now=True)
+   usuario_criacao = models.ForeignKey(User, related_name='+', ...)
+   usuario_atualizacao = models.ForeignKey(User, related_name='+', ...)
+   ```
+4. **Slug fields**: Use `unique=True` quando for identificador
+5. **EditorJS fields**: Use `EditorJsField` de `django_editorjs`
+
+### Padrões de Admin
+
+1. **Arquivo separado**: `admin/[model]_admin.py`
+2. **Classe base**: Herde de `ModelAdmin` ou custom base
+3. **Sempre configure**:
+   - `list_display`
+   - `list_filter`
+   - `search_fields`
+   - `fieldsets` (para organização no form)
+4. **Registre no `__init__.py`** da pasta admin
+
+### Padrões de Serializers
+
+1. **Arquivo separado**: `serializers/[model]_serializers.py`
+2. **Herança**: `serializers.ModelSerializer`
+3. **Meta class**: Sempre defina `model` e `fields`
+4. **Use `'__all__'`** ou liste explicitamente os campos
+5. **Validações customizadas**: Método `validate_[field]` ou `validate`
+
+### Padrões de ViewSets
+
+1. **Arquivo separado**: `viewsets/[model]_viewsets.py`
+2. **Base**: Use `NovadataModelViewSet` (do novadata_utils) ou `ModelViewSet`
+3. **Sempre configure**:
+   ```python
+   queryset = Model.objects.all()
+   serializer_class = ModelSerializer
+   permission_classes = [IsAuthenticated]  # ou [AllowAny] para público
+   http_method_names = ["get", "post", "put", "patch", "delete"]
+   ```
+4. **Filtros**: Use `DjangoFilterBackend` e `filters.SearchFilter`
+5. **Actions customizadas**: Use `@action` decorator
+6. **Registre no `urls.py`** com router
+
+### Novos Apps Django
+
+Ao criar um novo app:
+
+```bash
+python manage.py startapp app_name
+```
+
+Depois:
+1. Crie a estrutura de pastas (admin/, models/, serializers/, viewsets/)
+2. Mova arquivos default para subpastas corretas
+3. Configure `__init__.py` em cada subpasta para exports
+4. Adicione em `INSTALLED_APPS` no settings
+5. Configure URLs no app e no conecta/urls.py
+
+---
+
+## 🔐 Autenticação e Permissões
+
+### Frontend
+- Token já configurado no middleware `server/middleware/api-proxy.js`
+- Todas chamadas `/api/*` recebem header `Authorization: Token {API_SECRET}`
+
+### Backend
+- **APIs públicas** (vagas, áreas de atuação): `permission_classes = [AllowAny]`
+- **APIs privadas**: `permission_classes = [IsAuthenticated]`
+- **Custom permissions**: Crie em `permissions.py` no app
+
+---
+
+## 📁 Convenções de Nomenclatura
+
+### Frontend
+- **Componentes**: PascalCase (`VagaCard.vue`, `UiButton.vue`)
+- **Composables**: camelCase com prefixo `use` (`useShowError.js`)
+- **Services**: camelCase com sufixo `Service` (`vagasService.js`)
+- **Utils**: camelCase (`editorJS.ts`, `utils.js`)
+
+### Backend
+- **Models**: PascalCase (`Vaga`, `Candidato`)
+- **Arquivos**: snake_case (`vaga_admin.py`, `candidato_serializers.py`)
+- **Variáveis/funções**: snake_case (`get_vagas`, `usuario_criacao`)
+
+---
+
+## 🚫 O QUE NÃO FAZER
+
+### Frontend
+- ❌ Criar botões/inputs customizados sem usar Design System
+- ❌ Hardcodar valores que deveriam ser props
+- ❌ Duplicar lógica que poderia ser composable
+- ❌ Estilos inline ou CSS scoped sem necessidade
+- ❌ Ignorar componentes Quasar existentes
+
+### Backend
+- ❌ Models fora da pasta `models/`
+- ❌ Admin sem `list_display` ou `search_fields`
+- ❌ ViewSets sem `permission_classes` definido
+- ❌ Criar apps sem seguir estrutura de pastas padrão
+- ❌ Campos sem `verbose_name`
+- ❌ Commits diretos sem migrations
+
+---
+
+## 🧪 Testes
+
+### Frontend
+- Testes em `*.spec.js` ou `*.test.js`
+- Use Vitest para unit tests
+
+### Backend
+- Testes em `tests/` dentro de cada app
+- Use `TestCase` do Django
+- Organize em: `models/`, `admin/`, `viewsets/`, etc.
+
+---
+
+## 📚 Referências
+
+- **Frontend**: Consulte componentes existentes em `frontend/app/components/`
+- **Backend**: Veja apps existentes (`home/`, `recrutamento/`) como referência
+- **Proxy API**: `frontend/server/middleware/api-proxy.js`
+- **Scripts**: `scripts/README.md`
+
+---
+
+## ⚡ Workflow Recomendado
+
+1. **Antes de criar algo novo**: Verifique se já existe
+2. **Frontend**: Comece pelos componentes, depois lógica
+3. **Backend**: Model → Admin → Serializer → ViewSet → URLs
+4. **Sempre teste** localmente antes de commitar
+5. **Documente** decisões arquiteturais importantes
+
+---
+
+**IMPORTANTE**: Estas regras garantem consistência e manutenibilidade. Siga-as rigorosamente.

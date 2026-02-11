@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: conecta-ingress
+  namespace: conecta-prod
+  annotations:
+    cert-manager.io/cluster-issuer: "conecta-letsencrypt"
+    kubernetes.io/ingress.class: "nginx"
+    # nginx.ingress.kubernetes.io/proxy-body-size: "2048M"
+spec:
+  tls:
+  - hosts:
+    - conecta.novadata.com.br
+    secretName: conecta-letsencrypt
+  rules:
+  - host: conecta.novadata.com.br
+    http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: conecta-service
+              port:
+                number: 80

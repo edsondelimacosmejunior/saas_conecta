@@ -1,0 +1,114 @@
+@use "../variables"
+
+// $chip-height: 2em
+
+.q-chip
+  vertical-align: middle
+  border-radius: 16px
+  outline: 0
+  position: relative
+
+  height: initial
+  max-width: 100%
+  margin: 0px
+
+  background: #e0e0e0
+  color: rgba(0,0,0,.87)
+
+  font-size: 14px
+  padding: .5em .9em
+  font-weight: 500
+
+  &.active
+    background: rgba(var(--primary-pure), 0.1) !important
+    color: rgba(var(--primary-pure), 1) !important
+    border-color: rgba(var(--primary-pure), 1) !important
+
+  &[data-size="sm"]
+    font-size: 0.75rem
+    padding: 2px 6px
+    .q-badge
+      width: .5rem !important
+      height: .5rem !important
+
+  &[data-size="md"]
+    font-size: .75rem
+    padding: 2px 12px
+    .q-badge
+      width: .75rem
+      height: .75rem
+
+  &[data-size="lg"]
+    font-size: .875rem
+    padding: 2px 1rem
+    .q-badge
+      width: .75rem
+      height: .75rem
+
+  &--colored, &--dark
+    .q-chip__icon
+      color: inherit
+
+  &--outline
+    background: transparent !important
+    border: 1px solid currentColor
+
+  .q-avatar
+    // font-size: $chip-height
+    // margin-left: -.45em
+    // margin-right: .2em
+    // border-radius: 16px
+
+  &--selected
+    .q-avatar
+      display: none
+
+  &__icon
+    color: rgba(0,0,0,.54)
+    // font-size: 1.5em
+    // margin: -.2em
+
+    // &--left
+    //   margin-right: .2em
+    // &--right
+    //   margin-left: .2em
+    &--remove
+      margin-left: .1em !important
+
+      margin-right: -.5em
+      opacity: .6
+      outline: 0
+
+      &:hover,
+      &:focus
+        opacity: 1
+
+  &__content
+    white-space: nowrap
+    gap: .375rem
+
+  &--dense
+    border-radius: 12px
+    padding: 0 .4em
+    height: 1.5em
+
+    .q-avatar
+      font-size: 1.5em
+      margin-left: -.27em
+      margin-right: .1em
+      border-radius: 12px
+
+    .q-chip__icon
+      font-size: 1.25em
+      &--left
+        margin-right: .195em
+      &--remove
+        margin-right: -.25em
+
+  &--square
+    border-radius: variables.$generic-border-radius
+    .q-avatar
+      border-radius: (variables.$generic-border-radius - 1px) 0 0 (variables.$generic-border-radius - 1px)
+
+body.desktop .q-chip--clickable:focus
+  // box-shadow: $shadow-1

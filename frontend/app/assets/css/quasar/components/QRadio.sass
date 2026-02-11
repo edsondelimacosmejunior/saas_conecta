@@ -1,0 +1,139 @@
+$radio-transition: .22s cubic-bezier(0,0,.2,1) 0ms
+
+.q-radio
+  vertical-align: middle
+  user-select: none
+
+  &__native
+    width: 1px
+    height: 1px
+
+  &__bg,
+  &__icon-container
+    user-select: none
+
+  &[data-size="sm"]
+    .q-radio__label
+      font-size: .75rem
+
+  &[data-size="md"]
+    .q-radio__label
+      font-size: .875rem
+
+  &[data-size="lg"]
+    .q-radio__label
+      font-size: 1rem
+
+  &__label
+    color: rgba(var(--neutral-100), .7)
+    margin-left: 6px
+    line-height: 150%
+
+  &[aria-checked="true"]
+    .q-radio__label
+      color: rgba(var(--neutral-100), 1)
+
+  &__bg
+    // top: 25%
+    // left: 25%
+    inset: 0
+    width: 100%
+    height: 100%
+    -webkit-print-color-adjust: exact
+
+    path
+      fill: currentColor
+
+  &__icon
+    color: currentColor
+    font-size: .5em
+
+  &__check
+    transform-origin: 50% 50%
+    transform: scale3d(0, 0, 1)
+    transition: transform $radio-transition
+
+
+  &__inner
+    // font-size: 40px
+    width: 1em
+    min-width: 1em
+    height: 1em
+    outline: 0
+    border-radius: 50%
+    color: rgba(0,0,0,.24)
+
+    &--truthy
+      color: var(--q-primary)
+      .q-radio__check
+        transform: scale3d(1, 1, 1)
+
+  &.disabled
+    opacity: .75 !important
+    pointer-events: none
+    *
+      pointer-events: none
+
+  &--dark
+    .q-radio__inner
+      color: rgba(255,255,255,.7)
+      &:before
+        opacity: .32 !important
+      &--truthy
+        color: var(--q-primary)
+    .q-radio__label
+      color: rgba(var(--white), 0.7)
+
+  &[aria-checked="true"].q-radio--dark
+    .q-radio__label
+      color: rgba(var(--white), 0.9)
+
+  &--dense
+
+    .q-radio__inner
+      width: .5em
+      min-width: .5em
+      height: .5em
+
+    .q-radio__bg
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+
+    .q-radio__label
+      padding-left: .5em
+
+    &.reverse .q-radio__label
+      padding-left: 0
+      padding-right: .5em
+
+body.desktop
+
+  .q-radio:not(.disabled)
+    .q-radio__inner:before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      border-radius: 50%
+      background: currentColor
+      opacity: .12
+      transform: scale3d(0, 0, 1)
+      transition: transform $radio-transition
+
+    &:focus,
+    &:hover
+      .q-radio__inner:before
+        transform: scale3d(1.5, 1.5, 1)
+      // .q-radio__bg
+      //   color: rgba(var(--primary-pure), 1)
+      //   filter: drop-shadow( 0px 0px 8px 2px rgba(17, 210, 118, 0.15))
+
+  .q-radio--dense:not(.disabled)
+    &:focus,
+    &:hover
+      .q-radio__inner:before
+        transform: scale3d(1.5, 1.5, 1)

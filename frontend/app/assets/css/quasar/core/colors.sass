@@ -1,0 +1,1794 @@
+@use "../variables"
+
+\:root
+  --q-primary: #{variables.$primary}
+  --q-secondary: #{variables.$secondary}
+  --q-accent: #{variables.$accent}
+  --q-positive: #{variables.$positive}
+  --q-negative: #{variables.$negative}
+  --q-info: #{variables.$info}
+  --q-warning: #{variables.$warning}
+  --q-dark: #{variables.$dark}
+  --q-dark-page: #{variables.$dark-page}
+
+.body--dark
+  --q-negative: rgb(var(--d-error))
+  --q-positive: rgb(var(--d-success))
+  --q-warning: rgb(var(--d-warning))
+
+.text-dark
+  color: var(--q-dark) !important
+.bg-dark
+  background: var(--q-dark) !important
+
+.text-primary
+  color: var(--q-primary) !important
+.bg-primary
+  background: var(--q-primary) !important
+
+.text-secondary
+  color: var(--q-secondary) !important
+.bg-secondary
+  background: var(--q-secondary) !important
+
+.text-accent
+  color: var(--q-accent) !important
+.bg-accent
+  background: var(--q-accent) !important
+
+.text-positive
+  color: var(--q-positive) !important
+.bg-positive
+  background: var(--q-positive) !important
+
+.text-negative
+  color: var(--q-negative) !important
+.bg-negative
+  background: var(--q-negative) !important
+
+.text-info
+  color: var(--q-info) !important
+.bg-info
+  background: var(--q-info) !important
+
+.text-warning
+  color: var(--q-warning) !important
+.bg-warning
+  background: var(--q-warning) !important
+
+.text-white
+  color: #fff !important
+.bg-white
+  background: #fff !important
+
+.text-black
+  color: #000 !important
+.bg-black
+  background: #000 !important
+
+.text-transparent
+  color: transparent !important
+.bg-transparent
+  background: transparent !important
+
+.text-separator
+  color: variables.$separator-color !important
+.bg-separator
+  background: variables.$separator-color !important
+
+.text-dark-separator
+  color: variables.$separator-dark-color !important
+.bg-dark-separator
+  background: variables.$separator-dark-color !important
+
+// @stylint off
+
+.text-red
+  color: variables.$red !important
+
+.text-red-1
+  color: variables.$red-1 !important
+
+.text-red-2
+  color: variables.$red-2 !important
+
+.text-red-3
+  color: variables.$red-3 !important
+
+.text-red-4
+  color: variables.$red-4 !important
+
+.text-red-5
+  color: variables.$red-5 !important
+
+.text-red-6
+  color: variables.$red-6 !important
+
+.text-red-7
+  color: variables.$red-7 !important
+
+.text-red-8
+  color: variables.$red-8 !important
+
+.text-red-9
+  color: variables.$red-9 !important
+
+.text-red-10
+  color: variables.$red-10 !important
+
+.text-red-11
+  color: variables.$red-11 !important
+
+.text-red-12
+  color: variables.$red-12 !important
+
+.text-red-13
+  color: variables.$red-13 !important
+
+.text-red-14
+  color: variables.$red-14 !important
+
+.text-pink
+  color: variables.$pink !important
+
+.text-pink-1
+  color: variables.$pink-1 !important
+
+.text-pink-2
+  color: variables.$pink-2 !important
+
+.text-pink-3
+  color: variables.$pink-3 !important
+
+.text-pink-4
+  color: variables.$pink-4 !important
+
+.text-pink-5
+  color: variables.$pink-5 !important
+
+.text-pink-6
+  color: variables.$pink-6 !important
+
+.text-pink-7
+  color: variables.$pink-7 !important
+
+.text-pink-8
+  color: variables.$pink-8 !important
+
+.text-pink-9
+  color: variables.$pink-9 !important
+
+.text-pink-10
+  color: variables.$pink-10 !important
+
+.text-pink-11
+  color: variables.$pink-11 !important
+
+.text-pink-12
+  color: variables.$pink-12 !important
+
+.text-pink-13
+  color: variables.$pink-13 !important
+
+.text-pink-14
+  color: variables.$pink-14 !important
+
+.text-purple
+  color: variables.$purple !important
+
+.text-purple-1
+  color: variables.$purple-1 !important
+
+.text-purple-2
+  color: variables.$purple-2 !important
+
+.text-purple-3
+  color: variables.$purple-3 !important
+
+.text-purple-4
+  color: variables.$purple-4 !important
+
+.text-purple-5
+  color: variables.$purple-5 !important
+
+.text-purple-6
+  color: variables.$purple-6 !important
+
+.text-purple-7
+  color: variables.$purple-7 !important
+
+.text-purple-8
+  color: variables.$purple-8 !important
+
+.text-purple-9
+  color: variables.$purple-9 !important
+
+.text-purple-10
+  color: variables.$purple-10 !important
+
+.text-purple-11
+  color: variables.$purple-11 !important
+
+.text-purple-12
+  color: variables.$purple-12 !important
+
+.text-purple-13
+  color: variables.$purple-13 !important
+
+.text-purple-14
+  color: variables.$purple-14 !important
+
+.text-deep-purple
+  color: variables.$deep-purple !important
+
+.text-deep-purple-1
+  color: variables.$deep-purple-1 !important
+
+.text-deep-purple-2
+  color: variables.$deep-purple-2 !important
+
+.text-deep-purple-3
+  color: variables.$deep-purple-3 !important
+
+.text-deep-purple-4
+  color: variables.$deep-purple-4 !important
+
+.text-deep-purple-5
+  color: variables.$deep-purple-5 !important
+
+.text-deep-purple-6
+  color: variables.$deep-purple-6 !important
+
+.text-deep-purple-7
+  color: variables.$deep-purple-7 !important
+
+.text-deep-purple-8
+  color: variables.$deep-purple-8 !important
+
+.text-deep-purple-9
+  color: variables.$deep-purple-9 !important
+
+.text-deep-purple-10
+  color: variables.$deep-purple-10 !important
+
+.text-deep-purple-11
+  color: variables.$deep-purple-11 !important
+
+.text-deep-purple-12
+  color: variables.$deep-purple-12 !important
+
+.text-deep-purple-13
+  color: variables.$deep-purple-13 !important
+
+.text-deep-purple-14
+  color: variables.$deep-purple-14 !important
+
+.text-indigo
+  color: variables.$indigo !important
+
+.text-indigo-1
+  color: variables.$indigo-1 !important
+
+.text-indigo-2
+  color: variables.$indigo-2 !important
+
+.text-indigo-3
+  color: variables.$indigo-3 !important
+
+.text-indigo-4
+  color: variables.$indigo-4 !important
+
+.text-indigo-5
+  color: variables.$indigo-5 !important
+
+.text-indigo-6
+  color: variables.$indigo-6 !important
+
+.text-indigo-7
+  color: variables.$indigo-7 !important
+
+.text-indigo-8
+  color: variables.$indigo-8 !important
+
+.text-indigo-9
+  color: variables.$indigo-9 !important
+
+.text-indigo-10
+  color: variables.$indigo-10 !important
+
+.text-indigo-11
+  color: variables.$indigo-11 !important
+
+.text-indigo-12
+  color: variables.$indigo-12 !important
+
+.text-indigo-13
+  color: variables.$indigo-13 !important
+
+.text-indigo-14
+  color: variables.$indigo-14 !important
+
+.text-blue
+  color: variables.$blue !important
+
+.text-blue-1
+  color: variables.$blue-1 !important
+
+.text-blue-2
+  color: variables.$blue-2 !important
+
+.text-blue-3
+  color: variables.$blue-3 !important
+
+.text-blue-4
+  color: variables.$blue-4 !important
+
+.text-blue-5
+  color: variables.$blue-5 !important
+
+.text-blue-6
+  color: variables.$blue-6 !important
+
+.text-blue-7
+  color: variables.$blue-7 !important
+
+.text-blue-8
+  color: variables.$blue-8 !important
+
+.text-blue-9
+  color: variables.$blue-9 !important
+
+.text-blue-10
+  color: variables.$blue-10 !important
+
+.text-blue-11
+  color: variables.$blue-11 !important
+
+.text-blue-12
+  color: variables.$blue-12 !important
+
+.text-blue-13
+  color: variables.$blue-13 !important
+
+.text-blue-14
+  color: variables.$blue-14 !important
+
+.text-light-blue
+  color: variables.$light-blue !important
+
+.text-light-blue-1
+  color: variables.$light-blue-1 !important
+
+.text-light-blue-2
+  color: variables.$light-blue-2 !important
+
+.text-light-blue-3
+  color: variables.$light-blue-3 !important
+
+.text-light-blue-4
+  color: variables.$light-blue-4 !important
+
+.text-light-blue-5
+  color: variables.$light-blue-5 !important
+
+.text-light-blue-6
+  color: variables.$light-blue-6 !important
+
+.text-light-blue-7
+  color: variables.$light-blue-7 !important
+
+.text-light-blue-8
+  color: variables.$light-blue-8 !important
+
+.text-light-blue-9
+  color: variables.$light-blue-9 !important
+
+.text-light-blue-10
+  color: variables.$light-blue-10 !important
+
+.text-light-blue-11
+  color: variables.$light-blue-11 !important
+
+.text-light-blue-12
+  color: variables.$light-blue-12 !important
+
+.text-light-blue-13
+  color: variables.$light-blue-13 !important
+
+.text-light-blue-14
+  color: variables.$light-blue-14 !important
+
+.text-cyan
+  color: variables.$cyan !important
+
+.text-cyan-1
+  color: variables.$cyan-1 !important
+
+.text-cyan-2
+  color: variables.$cyan-2 !important
+
+.text-cyan-3
+  color: variables.$cyan-3 !important
+
+.text-cyan-4
+  color: variables.$cyan-4 !important
+
+.text-cyan-5
+  color: variables.$cyan-5 !important
+
+.text-cyan-6
+  color: variables.$cyan-6 !important
+
+.text-cyan-7
+  color: variables.$cyan-7 !important
+
+.text-cyan-8
+  color: variables.$cyan-8 !important
+
+.text-cyan-9
+  color: variables.$cyan-9 !important
+
+.text-cyan-10
+  color: variables.$cyan-10 !important
+
+.text-cyan-11
+  color: variables.$cyan-11 !important
+
+.text-cyan-12
+  color: variables.$cyan-12 !important
+
+.text-cyan-13
+  color: variables.$cyan-13 !important
+
+.text-cyan-14
+  color: variables.$cyan-14 !important
+
+.text-teal
+  color: variables.$teal !important
+
+.text-teal-1
+  color: variables.$teal-1 !important
+
+.text-teal-2
+  color: variables.$teal-2 !important
+
+.text-teal-3
+  color: variables.$teal-3 !important
+
+.text-teal-4
+  color: variables.$teal-4 !important
+
+.text-teal-5
+  color: variables.$teal-5 !important
+
+.text-teal-6
+  color: variables.$teal-6 !important
+
+.text-teal-7
+  color: variables.$teal-7 !important
+
+.text-teal-8
+  color: variables.$teal-8 !important
+
+.text-teal-9
+  color: variables.$teal-9 !important
+
+.text-teal-10
+  color: variables.$teal-10 !important
+
+.text-teal-11
+  color: variables.$teal-11 !important
+
+.text-teal-12
+  color: variables.$teal-12 !important
+
+.text-teal-13
+  color: variables.$teal-13 !important
+
+.text-teal-14
+  color: variables.$teal-14 !important
+
+.text-green
+  color: variables.$green !important
+
+.text-green-1
+  color: variables.$green-1 !important
+
+.text-green-2
+  color: variables.$green-2 !important
+
+.text-green-3
+  color: variables.$green-3 !important
+
+.text-green-4
+  color: variables.$green-4 !important
+
+.text-green-5
+  color: variables.$green-5 !important
+
+.text-green-6
+  color: variables.$green-6 !important
+
+.text-green-7
+  color: variables.$green-7 !important
+
+.text-green-8
+  color: variables.$green-8 !important
+
+.text-green-9
+  color: variables.$green-9 !important
+
+.text-green-10
+  color: variables.$green-10 !important
+
+.text-green-11
+  color: variables.$green-11 !important
+
+.text-green-12
+  color: variables.$green-12 !important
+
+.text-green-13
+  color: variables.$green-13 !important
+
+.text-green-14
+  color: variables.$green-14 !important
+
+.text-light-green
+  color: variables.$light-green !important
+
+.text-light-green-1
+  color: variables.$light-green-1 !important
+
+.text-light-green-2
+  color: variables.$light-green-2 !important
+
+.text-light-green-3
+  color: variables.$light-green-3 !important
+
+.text-light-green-4
+  color: variables.$light-green-4 !important
+
+.text-light-green-5
+  color: variables.$light-green-5 !important
+
+.text-light-green-6
+  color: variables.$light-green-6 !important
+
+.text-light-green-7
+  color: variables.$light-green-7 !important
+
+.text-light-green-8
+  color: variables.$light-green-8 !important
+
+.text-light-green-9
+  color: variables.$light-green-9 !important
+
+.text-light-green-10
+  color: variables.$light-green-10 !important
+
+.text-light-green-11
+  color: variables.$light-green-11 !important
+
+.text-light-green-12
+  color: variables.$light-green-12 !important
+
+.text-light-green-13
+  color: variables.$light-green-13 !important
+
+.text-light-green-14
+  color: variables.$light-green-14 !important
+
+.text-lime
+  color: variables.$lime !important
+
+.text-lime-1
+  color: variables.$lime-1 !important
+
+.text-lime-2
+  color: variables.$lime-2 !important
+
+.text-lime-3
+  color: variables.$lime-3 !important
+
+.text-lime-4
+  color: variables.$lime-4 !important
+
+.text-lime-5
+  color: variables.$lime-5 !important
+
+.text-lime-6
+  color: variables.$lime-6 !important
+
+.text-lime-7
+  color: variables.$lime-7 !important
+
+.text-lime-8
+  color: variables.$lime-8 !important
+
+.text-lime-9
+  color: variables.$lime-9 !important
+
+.text-lime-10
+  color: variables.$lime-10 !important
+
+.text-lime-11
+  color: variables.$lime-11 !important
+
+.text-lime-12
+  color: variables.$lime-12 !important
+
+.text-lime-13
+  color: variables.$lime-13 !important
+
+.text-lime-14
+  color: variables.$lime-14 !important
+
+.text-yellow
+  color: variables.$yellow !important
+
+.text-yellow-1
+  color: variables.$yellow-1 !important
+
+.text-yellow-2
+  color: variables.$yellow-2 !important
+
+.text-yellow-3
+  color: variables.$yellow-3 !important
+
+.text-yellow-4
+  color: variables.$yellow-4 !important
+
+.text-yellow-5
+  color: variables.$yellow-5 !important
+
+.text-yellow-6
+  color: variables.$yellow-6 !important
+
+.text-yellow-7
+  color: variables.$yellow-7 !important
+
+.text-yellow-8
+  color: variables.$yellow-8 !important
+
+.text-yellow-9
+  color: variables.$yellow-9 !important
+
+.text-yellow-10
+  color: variables.$yellow-10 !important
+
+.text-yellow-11
+  color: variables.$yellow-11 !important
+
+.text-yellow-12
+  color: variables.$yellow-12 !important
+
+.text-yellow-13
+  color: variables.$yellow-13 !important
+
+.text-yellow-14
+  color: variables.$yellow-14 !important
+
+.text-amber
+  color: variables.$amber !important
+
+.text-amber-1
+  color: variables.$amber-1 !important
+
+.text-amber-2
+  color: variables.$amber-2 !important
+
+.text-amber-3
+  color: variables.$amber-3 !important
+
+.text-amber-4
+  color: variables.$amber-4 !important
+
+.text-amber-5
+  color: variables.$amber-5 !important
+
+.text-amber-6
+  color: variables.$amber-6 !important
+
+.text-amber-7
+  color: variables.$amber-7 !important
+
+.text-amber-8
+  color: variables.$amber-8 !important
+
+.text-amber-9
+  color: variables.$amber-9 !important
+
+.text-amber-10
+  color: variables.$amber-10 !important
+
+.text-amber-11
+  color: variables.$amber-11 !important
+
+.text-amber-12
+  color: variables.$amber-12 !important
+
+.text-amber-13
+  color: variables.$amber-13 !important
+
+.text-amber-14
+  color: variables.$amber-14 !important
+
+.text-orange
+  color: variables.$orange !important
+
+.text-orange-1
+  color: variables.$orange-1 !important
+
+.text-orange-2
+  color: variables.$orange-2 !important
+
+.text-orange-3
+  color: variables.$orange-3 !important
+
+.text-orange-4
+  color: variables.$orange-4 !important
+
+.text-orange-5
+  color: variables.$orange-5 !important
+
+.text-orange-6
+  color: variables.$orange-6 !important
+
+.text-orange-7
+  color: variables.$orange-7 !important
+
+.text-orange-8
+  color: variables.$orange-8 !important
+
+.text-orange-9
+  color: variables.$orange-9 !important
+
+.text-orange-10
+  color: variables.$orange-10 !important
+
+.text-orange-11
+  color: variables.$orange-11 !important
+
+.text-orange-12
+  color: variables.$orange-12 !important
+
+.text-orange-13
+  color: variables.$orange-13 !important
+
+.text-orange-14
+  color: variables.$orange-14 !important
+
+.text-deep-orange
+  color: variables.$deep-orange !important
+
+.text-deep-orange-1
+  color: variables.$deep-orange-1 !important
+
+.text-deep-orange-2
+  color: variables.$deep-orange-2 !important
+
+.text-deep-orange-3
+  color: variables.$deep-orange-3 !important
+
+.text-deep-orange-4
+  color: variables.$deep-orange-4 !important
+
+.text-deep-orange-5
+  color: variables.$deep-orange-5 !important
+
+.text-deep-orange-6
+  color: variables.$deep-orange-6 !important
+
+.text-deep-orange-7
+  color: variables.$deep-orange-7 !important
+
+.text-deep-orange-8
+  color: variables.$deep-orange-8 !important
+
+.text-deep-orange-9
+  color: variables.$deep-orange-9 !important
+
+.text-deep-orange-10
+  color: variables.$deep-orange-10 !important
+
+.text-deep-orange-11
+  color: variables.$deep-orange-11 !important
+
+.text-deep-orange-12
+  color: variables.$deep-orange-12 !important
+
+.text-deep-orange-13
+  color: variables.$deep-orange-13 !important
+
+.text-deep-orange-14
+  color: variables.$deep-orange-14 !important
+
+.text-brown
+  color: variables.$brown !important
+
+.text-brown-1
+  color: variables.$brown-1 !important
+
+.text-brown-2
+  color: variables.$brown-2 !important
+
+.text-brown-3
+  color: variables.$brown-3 !important
+
+.text-brown-4
+  color: variables.$brown-4 !important
+
+.text-brown-5
+  color: variables.$brown-5 !important
+
+.text-brown-6
+  color: variables.$brown-6 !important
+
+.text-brown-7
+  color: variables.$brown-7 !important
+
+.text-brown-8
+  color: variables.$brown-8 !important
+
+.text-brown-9
+  color: variables.$brown-9 !important
+
+.text-brown-10
+  color: variables.$brown-10 !important
+
+.text-brown-11
+  color: variables.$brown-11 !important
+
+.text-brown-12
+  color: variables.$brown-12 !important
+
+.text-brown-13
+  color: variables.$brown-13 !important
+
+.text-brown-14
+  color: variables.$brown-14 !important
+
+.text-grey
+  color: variables.$grey !important
+
+.text-grey-1
+  color: variables.$grey-1 !important
+
+.text-grey-2
+  color: variables.$grey-2 !important
+
+.text-grey-3
+  color: variables.$grey-3 !important
+
+.text-grey-4
+  color: variables.$grey-4 !important
+
+.text-grey-5
+  color: variables.$grey-5 !important
+
+.text-grey-6
+  color: variables.$grey-6 !important
+
+.text-grey-7
+  color: variables.$grey-7 !important
+
+.text-grey-8
+  color: variables.$grey-8 !important
+
+.text-grey-9
+  color: variables.$grey-9 !important
+
+.text-grey-10
+  color: variables.$grey-10 !important
+
+.text-grey-11
+  color: variables.$grey-11 !important
+
+.text-grey-12
+  color: variables.$grey-12 !important
+
+.text-grey-13
+  color: variables.$grey-13 !important
+
+.text-grey-14
+  color: variables.$grey-14 !important
+
+.text-blue-grey
+  color: variables.$blue-grey !important
+
+.text-blue-grey-1
+  color: variables.$blue-grey-1 !important
+
+.text-blue-grey-2
+  color: variables.$blue-grey-2 !important
+
+.text-blue-grey-3
+  color: variables.$blue-grey-3 !important
+
+.text-blue-grey-4
+  color: variables.$blue-grey-4 !important
+
+.text-blue-grey-5
+  color: variables.$blue-grey-5 !important
+
+.text-blue-grey-6
+  color: variables.$blue-grey-6 !important
+
+.text-blue-grey-7
+  color: variables.$blue-grey-7 !important
+
+.text-blue-grey-8
+  color: variables.$blue-grey-8 !important
+
+.text-blue-grey-9
+  color: variables.$blue-grey-9 !important
+
+.text-blue-grey-10
+  color: variables.$blue-grey-10 !important
+
+.text-blue-grey-11
+  color: variables.$blue-grey-11 !important
+
+.text-blue-grey-12
+  color: variables.$blue-grey-12 !important
+
+.text-blue-grey-13
+  color: variables.$blue-grey-13 !important
+
+.text-blue-grey-14
+  color: variables.$blue-grey-14 !important
+
+.bg-red
+  background: variables.$red !important
+
+.bg-red-1
+  background: variables.$red-1 !important
+
+.bg-red-2
+  background: variables.$red-2 !important
+
+.bg-red-3
+  background: variables.$red-3 !important
+
+.bg-red-4
+  background: variables.$red-4 !important
+
+.bg-red-5
+  background: variables.$red-5 !important
+
+.bg-red-6
+  background: variables.$red-6 !important
+
+.bg-red-7
+  background: variables.$red-7 !important
+
+.bg-red-8
+  background: variables.$red-8 !important
+
+.bg-red-9
+  background: variables.$red-9 !important
+
+.bg-red-10
+  background: variables.$red-10 !important
+
+.bg-red-11
+  background: variables.$red-11 !important
+
+.bg-red-12
+  background: variables.$red-12 !important
+
+.bg-red-13
+  background: variables.$red-13 !important
+
+.bg-red-14
+  background: variables.$red-14 !important
+
+.bg-pink
+  background: variables.$pink !important
+
+.bg-pink-1
+  background: variables.$pink-1 !important
+
+.bg-pink-2
+  background: variables.$pink-2 !important
+
+.bg-pink-3
+  background: variables.$pink-3 !important
+
+.bg-pink-4
+  background: variables.$pink-4 !important
+
+.bg-pink-5
+  background: variables.$pink-5 !important
+
+.bg-pink-6
+  background: variables.$pink-6 !important
+
+.bg-pink-7
+  background: variables.$pink-7 !important
+
+.bg-pink-8
+  background: variables.$pink-8 !important
+
+.bg-pink-9
+  background: variables.$pink-9 !important
+
+.bg-pink-10
+  background: variables.$pink-10 !important
+
+.bg-pink-11
+  background: variables.$pink-11 !important
+
+.bg-pink-12
+  background: variables.$pink-12 !important
+
+.bg-pink-13
+  background: variables.$pink-13 !important
+
+.bg-pink-14
+  background: variables.$pink-14 !important
+
+.bg-purple
+  background: variables.$purple !important
+
+.bg-purple-1
+  background: variables.$purple-1 !important
+
+.bg-purple-2
+  background: variables.$purple-2 !important
+
+.bg-purple-3
+  background: variables.$purple-3 !important
+
+.bg-purple-4
+  background: variables.$purple-4 !important
+
+.bg-purple-5
+  background: variables.$purple-5 !important
+
+.bg-purple-6
+  background: variables.$purple-6 !important
+
+.bg-purple-7
+  background: variables.$purple-7 !important
+
+.bg-purple-8
+  background: variables.$purple-8 !important
+
+.bg-purple-9
+  background: variables.$purple-9 !important
+
+.bg-purple-10
+  background: variables.$purple-10 !important
+
+.bg-purple-11
+  background: variables.$purple-11 !important
+
+.bg-purple-12
+  background: variables.$purple-12 !important
+
+.bg-purple-13
+  background: variables.$purple-13 !important
+
+.bg-purple-14
+  background: variables.$purple-14 !important
+
+.bg-deep-purple
+  background: variables.$deep-purple !important
+
+.bg-deep-purple-1
+  background: variables.$deep-purple-1 !important
+
+.bg-deep-purple-2
+  background: variables.$deep-purple-2 !important
+
+.bg-deep-purple-3
+  background: variables.$deep-purple-3 !important
+
+.bg-deep-purple-4
+  background: variables.$deep-purple-4 !important
+
+.bg-deep-purple-5
+  background: variables.$deep-purple-5 !important
+
+.bg-deep-purple-6
+  background: variables.$deep-purple-6 !important
+
+.bg-deep-purple-7
+  background: variables.$deep-purple-7 !important
+
+.bg-deep-purple-8
+  background: variables.$deep-purple-8 !important
+
+.bg-deep-purple-9
+  background: variables.$deep-purple-9 !important
+
+.bg-deep-purple-10
+  background: variables.$deep-purple-10 !important
+
+.bg-deep-purple-11
+  background: variables.$deep-purple-11 !important
+
+.bg-deep-purple-12
+  background: variables.$deep-purple-12 !important
+
+.bg-deep-purple-13
+  background: variables.$deep-purple-13 !important
+
+.bg-deep-purple-14
+  background: variables.$deep-purple-14 !important
+
+.bg-indigo
+  background: variables.$indigo !important
+
+.bg-indigo-1
+  background: variables.$indigo-1 !important
+
+.bg-indigo-2
+  background: variables.$indigo-2 !important
+
+.bg-indigo-3
+  background: variables.$indigo-3 !important
+
+.bg-indigo-4
+  background: variables.$indigo-4 !important
+
+.bg-indigo-5
+  background: variables.$indigo-5 !important
+
+.bg-indigo-6
+  background: variables.$indigo-6 !important
+
+.bg-indigo-7
+  background: variables.$indigo-7 !important
+
+.bg-indigo-8
+  background: variables.$indigo-8 !important
+
+.bg-indigo-9
+  background: variables.$indigo-9 !important
+
+.bg-indigo-10
+  background: variables.$indigo-10 !important
+
+.bg-indigo-11
+  background: variables.$indigo-11 !important
+
+.bg-indigo-12
+  background: variables.$indigo-12 !important
+
+.bg-indigo-13
+  background: variables.$indigo-13 !important
+
+.bg-indigo-14
+  background: variables.$indigo-14 !important
+
+.bg-blue
+  background: variables.$blue !important
+
+.bg-blue-1
+  background: variables.$blue-1 !important
+
+.bg-blue-2
+  background: variables.$blue-2 !important
+
+.bg-blue-3
+  background: variables.$blue-3 !important
+
+.bg-blue-4
+  background: variables.$blue-4 !important
+
+.bg-blue-5
+  background: variables.$blue-5 !important
+
+.bg-blue-6
+  background: variables.$blue-6 !important
+
+.bg-blue-7
+  background: variables.$blue-7 !important
+
+.bg-blue-8
+  background: variables.$blue-8 !important
+
+.bg-blue-9
+  background: variables.$blue-9 !important
+
+.bg-blue-10
+  background: variables.$blue-10 !important
+
+.bg-blue-11
+  background: variables.$blue-11 !important
+
+.bg-blue-12
+  background: variables.$blue-12 !important
+
+.bg-blue-13
+  background: variables.$blue-13 !important
+
+.bg-blue-14
+  background: variables.$blue-14 !important
+
+.bg-light-blue
+  background: variables.$light-blue !important
+
+.bg-light-blue-1
+  background: variables.$light-blue-1 !important
+
+.bg-light-blue-2
+  background: variables.$light-blue-2 !important
+
+.bg-light-blue-3
+  background: variables.$light-blue-3 !important
+
+.bg-light-blue-4
+  background: variables.$light-blue-4 !important
+
+.bg-light-blue-5
+  background: variables.$light-blue-5 !important
+
+.bg-light-blue-6
+  background: variables.$light-blue-6 !important
+
+.bg-light-blue-7
+  background: variables.$light-blue-7 !important
+
+.bg-light-blue-8
+  background: variables.$light-blue-8 !important
+
+.bg-light-blue-9
+  background: variables.$light-blue-9 !important
+
+.bg-light-blue-10
+  background: variables.$light-blue-10 !important
+
+.bg-light-blue-11
+  background: variables.$light-blue-11 !important
+
+.bg-light-blue-12
+  background: variables.$light-blue-12 !important
+
+.bg-light-blue-13
+  background: variables.$light-blue-13 !important
+
+.bg-light-blue-14
+  background: variables.$light-blue-14 !important
+
+.bg-cyan
+  background: variables.$cyan !important
+
+.bg-cyan-1
+  background: variables.$cyan-1 !important
+
+.bg-cyan-2
+  background: variables.$cyan-2 !important
+
+.bg-cyan-3
+  background: variables.$cyan-3 !important
+
+.bg-cyan-4
+  background: variables.$cyan-4 !important
+
+.bg-cyan-5
+  background: variables.$cyan-5 !important
+
+.bg-cyan-6
+  background: variables.$cyan-6 !important
+
+.bg-cyan-7
+  background: variables.$cyan-7 !important
+
+.bg-cyan-8
+  background: variables.$cyan-8 !important
+
+.bg-cyan-9
+  background: variables.$cyan-9 !important
+
+.bg-cyan-10
+  background: variables.$cyan-10 !important
+
+.bg-cyan-11
+  background: variables.$cyan-11 !important
+
+.bg-cyan-12
+  background: variables.$cyan-12 !important
+
+.bg-cyan-13
+  background: variables.$cyan-13 !important
+
+.bg-cyan-14
+  background: variables.$cyan-14 !important
+
+.bg-teal
+  background: variables.$teal !important
+
+.bg-teal-1
+  background: variables.$teal-1 !important
+
+.bg-teal-2
+  background: variables.$teal-2 !important
+
+.bg-teal-3
+  background: variables.$teal-3 !important
+
+.bg-teal-4
+  background: variables.$teal-4 !important
+
+.bg-teal-5
+  background: variables.$teal-5 !important
+
+.bg-teal-6
+  background: variables.$teal-6 !important
+
+.bg-teal-7
+  background: variables.$teal-7 !important
+
+.bg-teal-8
+  background: variables.$teal-8 !important
+
+.bg-teal-9
+  background: variables.$teal-9 !important
+
+.bg-teal-10
+  background: variables.$teal-10 !important
+
+.bg-teal-11
+  background: variables.$teal-11 !important
+
+.bg-teal-12
+  background: variables.$teal-12 !important
+
+.bg-teal-13
+  background: variables.$teal-13 !important
+
+.bg-teal-14
+  background: variables.$teal-14 !important
+
+.bg-green
+  background: variables.$green !important
+
+.bg-green-1
+  background: variables.$green-1 !important
+
+.bg-green-2
+  background: variables.$green-2 !important
+
+.bg-green-3
+  background: variables.$green-3 !important
+
+.bg-green-4
+  background: variables.$green-4 !important
+
+.bg-green-5
+  background: variables.$green-5 !important
+
+.bg-green-6
+  background: variables.$green-6 !important
+
+.bg-green-7
+  background: variables.$green-7 !important
+
+.bg-green-8
+  background: variables.$green-8 !important
+
+.bg-green-9
+  background: variables.$green-9 !important
+
+.bg-green-10
+  background: variables.$green-10 !important
+
+.bg-green-11
+  background: variables.$green-11 !important
+
+.bg-green-12
+  background: variables.$green-12 !important
+
+.bg-green-13
+  background: variables.$green-13 !important
+
+.bg-green-14
+  background: variables.$green-14 !important
+
+.bg-light-green
+  background: variables.$light-green !important
+
+.bg-light-green-1
+  background: variables.$light-green-1 !important
+
+.bg-light-green-2
+  background: variables.$light-green-2 !important
+
+.bg-light-green-3
+  background: variables.$light-green-3 !important
+
+.bg-light-green-4
+  background: variables.$light-green-4 !important
+
+.bg-light-green-5
+  background: variables.$light-green-5 !important
+
+.bg-light-green-6
+  background: variables.$light-green-6 !important
+
+.bg-light-green-7
+  background: variables.$light-green-7 !important
+
+.bg-light-green-8
+  background: variables.$light-green-8 !important
+
+.bg-light-green-9
+  background: variables.$light-green-9 !important
+
+.bg-light-green-10
+  background: variables.$light-green-10 !important
+
+.bg-light-green-11
+  background: variables.$light-green-11 !important
+
+.bg-light-green-12
+  background: variables.$light-green-12 !important
+
+.bg-light-green-13
+  background: variables.$light-green-13 !important
+
+.bg-light-green-14
+  background: variables.$light-green-14 !important
+
+.bg-lime
+  background: variables.$lime !important
+
+.bg-lime-1
+  background: variables.$lime-1 !important
+
+.bg-lime-2
+  background: variables.$lime-2 !important
+
+.bg-lime-3
+  background: variables.$lime-3 !important
+
+.bg-lime-4
+  background: variables.$lime-4 !important
+
+.bg-lime-5
+  background: variables.$lime-5 !important
+
+.bg-lime-6
+  background: variables.$lime-6 !important
+
+.bg-lime-7
+  background: variables.$lime-7 !important
+
+.bg-lime-8
+  background: variables.$lime-8 !important
+
+.bg-lime-9
+  background: variables.$lime-9 !important
+
+.bg-lime-10
+  background: variables.$lime-10 !important
+
+.bg-lime-11
+  background: variables.$lime-11 !important
+
+.bg-lime-12
+  background: variables.$lime-12 !important
+
+.bg-lime-13
+  background: variables.$lime-13 !important
+
+.bg-lime-14
+  background: variables.$lime-14 !important
+
+.bg-yellow
+  background: variables.$yellow !important
+
+.bg-yellow-1
+  background: variables.$yellow-1 !important
+
+.bg-yellow-2
+  background: variables.$yellow-2 !important
+
+.bg-yellow-3
+  background: variables.$yellow-3 !important
+
+.bg-yellow-4
+  background: variables.$yellow-4 !important
+
+.bg-yellow-5
+  background: variables.$yellow-5 !important
+
+.bg-yellow-6
+  background: variables.$yellow-6 !important
+
+.bg-yellow-7
+  background: variables.$yellow-7 !important
+
+.bg-yellow-8
+  background: variables.$yellow-8 !important
+
+.bg-yellow-9
+  background: variables.$yellow-9 !important
+
+.bg-yellow-10
+  background: variables.$yellow-10 !important
+
+.bg-yellow-11
+  background: variables.$yellow-11 !important
+
+.bg-yellow-12
+  background: variables.$yellow-12 !important
+
+.bg-yellow-13
+  background: variables.$yellow-13 !important
+
+.bg-yellow-14
+  background: variables.$yellow-14 !important
+
+.bg-amber
+  background: variables.$amber !important
+
+.bg-amber-1
+  background: variables.$amber-1 !important
+
+.bg-amber-2
+  background: variables.$amber-2 !important
+
+.bg-amber-3
+  background: variables.$amber-3 !important
+
+.bg-amber-4
+  background: variables.$amber-4 !important
+
+.bg-amber-5
+  background: variables.$amber-5 !important
+
+.bg-amber-6
+  background: variables.$amber-6 !important
+
+.bg-amber-7
+  background: variables.$amber-7 !important
+
+.bg-amber-8
+  background: variables.$amber-8 !important
+
+.bg-amber-9
+  background: variables.$amber-9 !important
+
+.bg-amber-10
+  background: variables.$amber-10 !important
+
+.bg-amber-11
+  background: variables.$amber-11 !important
+
+.bg-amber-12
+  background: variables.$amber-12 !important
+
+.bg-amber-13
+  background: variables.$amber-13 !important
+
+.bg-amber-14
+  background: variables.$amber-14 !important
+
+.bg-orange
+  background: variables.$orange !important
+
+.bg-orange-1
+  background: variables.$orange-1 !important
+
+.bg-orange-2
+  background: variables.$orange-2 !important
+
+.bg-orange-3
+  background: variables.$orange-3 !important
+
+.bg-orange-4
+  background: variables.$orange-4 !important
+
+.bg-orange-5
+  background: variables.$orange-5 !important
+
+.bg-orange-6
+  background: variables.$orange-6 !important
+
+.bg-orange-7
+  background: variables.$orange-7 !important
+
+.bg-orange-8
+  background: variables.$orange-8 !important
+
+.bg-orange-9
+  background: variables.$orange-9 !important
+
+.bg-orange-10
+  background: variables.$orange-10 !important
+
+.bg-orange-11
+  background: variables.$orange-11 !important
+
+.bg-orange-12
+  background: variables.$orange-12 !important
+
+.bg-orange-13
+  background: variables.$orange-13 !important
+
+.bg-orange-14
+  background: variables.$orange-14 !important
+
+.bg-deep-orange
+  background: variables.$deep-orange !important
+
+.bg-deep-orange-1
+  background: variables.$deep-orange-1 !important
+
+.bg-deep-orange-2
+  background: variables.$deep-orange-2 !important
+
+.bg-deep-orange-3
+  background: variables.$deep-orange-3 !important
+
+.bg-deep-orange-4
+  background: variables.$deep-orange-4 !important
+
+.bg-deep-orange-5
+  background: variables.$deep-orange-5 !important
+
+.bg-deep-orange-6
+  background: variables.$deep-orange-6 !important
+
+.bg-deep-orange-7
+  background: variables.$deep-orange-7 !important
+
+.bg-deep-orange-8
+  background: variables.$deep-orange-8 !important
+
+.bg-deep-orange-9
+  background: variables.$deep-orange-9 !important
+
+.bg-deep-orange-10
+  background: variables.$deep-orange-10 !important
+
+.bg-deep-orange-11
+  background: variables.$deep-orange-11 !important
+
+.bg-deep-orange-12
+  background: variables.$deep-orange-12 !important
+
+.bg-deep-orange-13
+  background: variables.$deep-orange-13 !important
+
+.bg-deep-orange-14
+  background: variables.$deep-orange-14 !important
+
+.bg-brown
+  background: variables.$brown !important
+
+.bg-brown-1
+  background: variables.$brown-1 !important
+
+.bg-brown-2
+  background: variables.$brown-2 !important
+
+.bg-brown-3
+  background: variables.$brown-3 !important
+
+.bg-brown-4
+  background: variables.$brown-4 !important
+
+.bg-brown-5
+  background: variables.$brown-5 !important
+
+.bg-brown-6
+  background: variables.$brown-6 !important
+
+.bg-brown-7
+  background: variables.$brown-7 !important
+
+.bg-brown-8
+  background: variables.$brown-8 !important
+
+.bg-brown-9
+  background: variables.$brown-9 !important
+
+.bg-brown-10
+  background: variables.$brown-10 !important
+
+.bg-brown-11
+  background: variables.$brown-11 !important
+
+.bg-brown-12
+  background: variables.$brown-12 !important
+
+.bg-brown-13
+  background: variables.$brown-13 !important
+
+.bg-brown-14
+  background: variables.$brown-14 !important
+
+.bg-grey
+  background: variables.$grey !important
+
+.bg-grey-1
+  background: variables.$grey-1 !important
+
+.bg-grey-2
+  background: variables.$grey-2 !important
+
+.bg-grey-3
+  background: variables.$grey-3 !important
+
+.bg-grey-4
+  background: variables.$grey-4 !important
+
+.bg-grey-5
+  background: variables.$grey-5 !important
+
+.bg-grey-6
+  background: variables.$grey-6 !important
+
+.bg-grey-7
+  background: variables.$grey-7 !important
+
+.bg-grey-8
+  background: variables.$grey-8 !important
+
+.bg-grey-9
+  background: variables.$grey-9 !important
+
+.bg-grey-10
+  background: variables.$grey-10 !important
+
+.bg-grey-11
+  background: variables.$grey-11 !important
+
+.bg-grey-12
+  background: variables.$grey-12 !important
+
+.bg-grey-13
+  background: variables.$grey-13 !important
+
+.bg-grey-14
+  background: variables.$grey-14 !important
+
+.bg-blue-grey
+  background: variables.$blue-grey !important
+
+.bg-blue-grey-1
+  background: variables.$blue-grey-1 !important
+
+.bg-blue-grey-2
+  background: variables.$blue-grey-2 !important
+
+.bg-blue-grey-3
+  background: variables.$blue-grey-3 !important
+
+.bg-blue-grey-4
+  background: variables.$blue-grey-4 !important
+
+.bg-blue-grey-5
+  background: variables.$blue-grey-5 !important
+
+.bg-blue-grey-6
+  background: variables.$blue-grey-6 !important
+
+.bg-blue-grey-7
+  background: variables.$blue-grey-7 !important
+
+.bg-blue-grey-8
+  background: variables.$blue-grey-8 !important
+
+.bg-blue-grey-9
+  background: variables.$blue-grey-9 !important
+
+.bg-blue-grey-10
+  background: variables.$blue-grey-10 !important
+
+.bg-blue-grey-11
+  background: variables.$blue-grey-11 !important
+
+.bg-blue-grey-12
+  background: variables.$blue-grey-12 !important
+
+.bg-blue-grey-13
+  background: variables.$blue-grey-13 !important
+
+.bg-blue-grey-14
+  background: variables.$blue-grey-14 !important

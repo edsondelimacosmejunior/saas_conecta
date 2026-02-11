@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: conecta-configmap
+  namespace: conecta-dev
+data:
+  DEBUG: 'True'
+  USE_POSTGRES: 'True'
+  USE_AWS: 'True'
+  ALLOWED_HOSTS: '127.0.0.1,localhost,conecta.novadata.dev'
+  CSRF_TRUSTED_ORIGINS: 'https://conecta.novadata.dev'
+  CORS_ALLOWED_ORIGINS: 'https://conecta.novadata.dev'
+  ENVIAR_EMAIL: 'True'
+  URL_WEBHOOK_DISCORD: 'https://discord.com/api/webhooks/1069637662966812712/p87e82nOIpSs0OZL57--buQhDm9xkdDSg5oePofSWm2oi4VtYD9GEl7a_8PPVS9kanCd'
+  URL_WEBHOOK_DISCORD_COORD: 'https://discord.com/api/webhooks/1070769348559503390/gBK7wcy2G5Nc8GqHfxZxNfsci1PycGCkALxc5Cb0CHxi5zVC4INmvSphGoqdO6hYBVqk'
+  URL_WEBHOOK_DISCORD_COMERCIAL: 'https://discord.com/api/webhooks/1122944709527085166/SbYyCv8NCiMHxudtUTwXBE7weFF7iuGQt9K6n_aXQQnAtUl5qEbBAZoxWU2SDgC56y3q'
+  URL_WEBHOOK_DISCORD_NIVERS: 'https://discord.com/api/webhooks/1090994125249204365/ejWC_Xnv8qsX8Dmyvo0nAQ9fLOEwUsxyhhPS7sWEHKfJ5bTSL-2tfZA8TafAAo06Ia7w'
+  URL_WEBHOOK_DISCORD_PROJETOS: 'https://discord.com/api/webhooks/1075817479932235887/pHqaI8KbwV-Vh1CtF_gB-9idLjeb_e8aQjMB9wHctMk5nZh5yB0JqQSGRhRNyuLdd7Ll'
+  URL_WEBHOOK_DISCORD_PROJETOS2: 'https://discord.com/api/webhooks/1075817784921042974/_4R7WORmLSsWbbQSclAu4A5nnFLSM0H9HPhPVNxYCVzDK4ulzwZ0n1L8gfX3YTOxbV4s'
+  URL_WEBHOOK_DISCORD_PROJETOS3: 'https://discord.com/api/webhooks/1093620880682258522/OECZ-NAp7tG2Zoe0A9QVR_CJbUL1LnusX0wiIknaMwxai-8vmGEB5YOJODI8tCdblVvZ'
+  URL_WEBHOOK_DISCORD_PROJETOS4: 'https://discord.com/api/webhooks/1103034711690969088/OpRf6EB1PFx848gAJ0-rOtJTSRQBKO6yBntLqL6XVc8pebk4sTgPqxsiCsd8pj0cHzB1'
+  AWS_NAME_BUCKET: 'django-conecta-dev'
+  LINK_CLOUD: 'd1bsp018bhhim3.cloudfront.net'
+  USE_INSTRUMENTACAO: 'True'
+  SERVICO_JAEGER: 'conecta-dev'
+  URL_OTEL: 'https://otel.novadata.com.br/v1/traces'

@@ -1,0 +1,96 @@
+@use "../variables"
+
+.q-select
+  .q-field__control
+    height: 100%
+  &--without-input
+    .q-field__control
+      cursor: pointer
+  &--with-input
+    .q-field__control
+      cursor: text
+
+  .q-field__input
+    min-width: 50px !important
+    cursor: text
+
+    &--padding
+      padding-left: 4px
+
+  .q-select__dropdown-icon
+    color: rgb(var(--neutral-60))
+
+  &:has(select)
+    input::placeholder
+      opacity: 0 !important
+
+  &__focus-target,
+  &__autocomplete-input
+    position: absolute
+    outline: 0 !important
+    width: 0
+    height: 0
+    padding: 0
+    border: 0
+    opacity: 0
+
+  &__dropdown-icon
+    cursor: pointer
+    transition: transform .28s
+
+  &.q-field--readonly
+    .q-field__control, .q-select__dropdown-icon
+      cursor: default
+
+  &__dialog
+    width: 90vw !important
+    max-width: 90vw !important
+    max-height: calc(100vh - 70px) !important
+    background: #fff
+    display: flex
+    flex-direction: column
+
+    > .scroll
+      position: relative
+      background: inherit
+
+  .q-field__native
+    span
+      overflow: hidden
+      display: -webkit-box
+      -webkit-line-clamp: 1
+      -webkit-box-orient: vertical
+// addressbar always gets shown, so need to slim this down
+body.mobile:not(.native-mobile) .q-select__dialog
+  max-height: calc(100vh - 108px) !important
+
+body.platform-android
+
+  &.native-mobile .q-dialog__inner--top .q-select__dialog
+    max-height: calc(100vh - 24px) !important
+
+  &:not(.native-mobile) .q-dialog__inner--top .q-select__dialog
+    max-height: calc(100vh - 80px) !important
+
+body.platform-ios
+
+  &.native-mobile .q-dialog__inner--top
+    > div
+      border-radius: variables.$generic-border-radius
+
+    .q-select__dialog--focused
+      max-height: 47vh !important
+
+  &:not(.native-mobile) .q-dialog__inner--top .q-select__dialog--focused
+    max-height: 50vh !important
+
+.select-menu
+  --q-pe-top: 6px
+  box-shadow: variables.$shadow-2
+  border-radius: variables.$generic-border-radius
+  padding: 6px
+  .q-item
+    border-radius: variables.$generic-border-radius !important
+
+// .q-select.q-field--focused.q-field--highlighted
+  // box-shadow: $shadow-2

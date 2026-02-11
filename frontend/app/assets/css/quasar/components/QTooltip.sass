@@ -1,0 +1,28 @@
+@use '../core/typography'
+@use "../variables"
+
+
+.q-tooltip--style
+  font-size: variables.$tooltip-fontsize
+  color: variables.$tooltip-color
+  background: variables.$tooltip-background
+  border-radius: variables.$tooltip-border-radius
+  text-transform: none
+  border: 1px solid rgba(var(--neutral-100),0.1)
+  font-weight: normal
+  @include typography.text(headline-3)
+
+.q-tooltip
+  z-index: variables.$z-tooltip
+  position: fixed !important
+  overflow-y: auto
+  overflow-x: hidden
+  padding: variables.$tooltip-padding
+
+  @media (max-width: variables.$breakpoint-xs-max)
+    font-size: variables.$tooltip-mobile-fontsize
+    padding: variables.$tooltip-mobile-padding
+
+.body--dark .q-tooltip--style
+  --neutral-100: rgba(var(--white), 0.9)
+  background: rgba(var(--d-neutral-40), 1)

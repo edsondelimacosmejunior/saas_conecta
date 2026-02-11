@@ -1,0 +1,31 @@
+.q-breadcrumbs
+
+  &__el
+    color: rgba(var(--neutral-60), 1)
+
+  &__el-icon
+    font-size: 125%
+
+    &--with-label
+      margin-right: 8px
+
+  .q-breadcrumbs__separator
+    color: rgba(var(--neutral-60), 1)
+
+  .q-breadcrumbs--last
+    span
+      color: rgba(var(--primary-pure), 1)
+
+[dir=rtl] .q-breadcrumbs__separator .q-icon
+  transform: scaleX(-1) #{"/* rtl:ignore */"}
+
+.body--dark
+  .q-breadcrumbs
+    &__el
+      color: rgba(var(--white), 0.7)
+
+    .q-breadcrumbs__separator
+      color: rgba(var(--white), 0.7)
+
+.q-router-link--active
+  color: rgb(var(--primary-pure)) !important
